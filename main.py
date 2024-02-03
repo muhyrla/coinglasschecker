@@ -7,7 +7,7 @@ import time
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.124 YaBrowser/22.9.3.886 Yowser/2.5 Safari/537.36'}
 
-token = '1749557756:AAE3xpj2p66EjDeW-a80kxcSSo8SUURXZLM'
+token = ''      # TOKEN FROM TELEGRAM BOT HERE
 bot = TeleBot(token)
 
 
@@ -27,18 +27,14 @@ def get_list_of_coins():
 
 
 def twelwe_coins(sortedlist):
-    count = 0
     lsist = []
-    for element in sortedlist:
-        lsist.append(element[1])
-        count += 1
-        if count == 12:
-            break
+    for i in range(0,13):
+        lsist.append(element[i][1])
     return lsist
 
 
 def call(tokenname):
-    bot.send_message(877841555, 'Появился новый токен ' + tokenname)
+    bot.send_message(#id here#, 'Появился новый токен ' + tokenname)   # CHAT_ID HERE
     print('Успешно отстучал в телеграм: ' + 'Появился новый токен ' + tokenname)
 
 
